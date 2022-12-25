@@ -2,74 +2,36 @@ package practiceMenu;
 
 import java.util.Scanner;
 
-public class checkData implements ICheckData {
-	public int arr;
-	public String ID;
-	public String Name;
-	public String Address;
-	
-	public checkData() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	public int elementOfArray() {
+public class CheckData implements ICheckData {	
+	public int checkIsIntType() {
+		int arrLength = 0;
 		boolean check = true;
 		while(check) {
 			try {
 				Scanner sc = new Scanner(System.in);
-				arr = sc.nextInt();
+				arrLength = sc.nextInt();
 				check = false;
 			} catch (Exception e) {
-				System.out.println("Xin moi nhap dung so luong phan tu: ");
+				System.out.println("Xin moi nhap dung kieu du lieu: ");
 				check = true;
 			}
 		}
-		return arr;
+		return arrLength;
 	}
 	
-	public String checkID() {
+	public String checkIsStringType() {
+		String stringInput = "";
 		boolean check = true;
 		while(check) {
 			try {
 				Scanner sc = new Scanner(System.in);
-				ID = sc.nextLine();
+				stringInput = sc.nextLine();
 				check = false;
 			} catch (Exception e) {
-				System.out.println("Xin moi nhap dung ID: ");
+				System.out.println("Xin moi nhap dung kieu du lieu: ");
 				check = true;
 			}
 		}
-		return ID;
+		return stringInput;
 	}
-	
-	public String checkName() {
-		boolean check = true;
-		while(check) {
-			try {
-				Scanner sc = new Scanner(System.in);
-				Name = sc.nextLine();
-				check = false;
-			} catch (Exception e) {
-				System.out.println("Xin moi nhap dung Name: ");
-				check = true;
-			}
-		}
-		return Name;
-	}
-	
-	public String checkAddress() {
-		boolean check = true;
-		while(check) {
-			try {
-				Scanner sc = new Scanner(System.in);
-				Address = sc.nextLine();
-				check = false;
-			} catch (Exception e) {
-				System.out.println("Xin moi nhap dung Address: ");
-				check = true;
-			}
-		}
-		return Address;
-	}
-
 }
